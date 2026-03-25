@@ -6,10 +6,12 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    /* UPDATED: Change primary font to Montserrat */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fcfcfc;
+    font-weight: 400;
 }
 
 /* Typography & Colors */
@@ -45,7 +47,7 @@ a:hover {
     background-color: var(--light-bg);
 }
 
-/* Navigation */
+/* UPDATED: Navigation and Logo */
 .navbar {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -58,14 +60,27 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 90px;
 }
 
+/* Styling the logo to match the all-caps, bold, slanted vibe */
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: italic;
     color: var(--primary-color);
-    letter-spacing: 1px;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.logo .top {
+    font-size: 1.6rem;
+}
+
+.logo .bottom {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .logo span {
@@ -79,8 +94,11 @@ a:hover {
 }
 
 .nav-links a {
-    font-weight: 600;
-    font-size: 1rem;
+    /* UPDATED: Bolder nav links, also uppercase */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
 }
 
 /* Hero Section */
@@ -101,27 +119,34 @@ a:hover {
     max-width: 800px;
 }
 
+/* UPDATED: Extra bold, italic, and uppercase for H1 */
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-size: 3.8rem;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
     margin-bottom: 20px;
-    line-height: 1.2;
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .hero p {
     font-size: 1.25rem;
     margin-bottom: 40px;
     color: #e0e6ed;
+    font-weight: 300;
 }
 
 .btn {
     display: inline-block;
     padding: 15px 35px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
@@ -141,10 +166,15 @@ a:hover {
     margin-bottom: 50px;
 }
 
+/* UPDATED: Section H2 extra bold, italic, uppercase */
 .section-title h2 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style: italic;
+    text-transform: uppercase;
     color: var(--primary-color);
     margin-bottom: 10px;
+    letter-spacing: -0.5px;
 }
 
 .underline {
@@ -161,6 +191,7 @@ a:hover {
     max-width: 800px;
     margin: 0 auto;
     color: #555;
+    font-weight: 400;
 }
 
 /* Services Grid */
@@ -193,6 +224,14 @@ a:hover {
 .card h3 {
     margin-bottom: 15px;
     color: var(--primary-color);
+    /* Bolder subheaders */
+    font-weight: 700;
+    font-size: 1.35rem;
+}
+
+.card p {
+    font-weight: 400;
+    font-size: 0.95rem;
 }
 
 /* Gallery Grid */
@@ -229,6 +268,7 @@ a:hover {
 .contact-info p {
     font-size: 1.1rem;
     margin-bottom: 15px;
+    font-weight: 400;
 }
 
 /* Footer */
@@ -241,6 +281,14 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
     .hero h1 {
         font-size: 2.5rem;
     }
