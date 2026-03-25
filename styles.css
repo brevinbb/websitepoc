@@ -6,48 +6,36 @@
 }
 
 body {
-    /* UPDATED: Change primary font to Montserrat */
-    font-family: 'Montserrat', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fcfcfc;
-    font-weight: 400;
 }
 
-/* Typography & Colors */
 :root {
-    --primary-color: #1b2a47; /* Slate Navy */
-    --accent-color: #e67e22; /* Industrial Orange */
+    --primary-color: #1b2a47; 
+    --accent-color: #e67e22; 
     --light-bg: #f4f7f6;
-    --text-dark: #222;
 }
 
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
+/* Typography Overrides */
+h1, h2, .wolfe-text {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
-a:hover {
-    color: var(--accent-color);
+.contracting-text {
+    font-family: 'Michroma', sans-serif;
+    text-transform: uppercase;
 }
 
-/* Layout Classes */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
+.script-text {
+    font-family: 'Permanent Marker', cursive;
+    color: #777;
 }
 
-.section {
-    padding: 80px 0;
-}
-
-.bg-light {
-    background-color: var(--light-bg);
-}
-
-/* UPDATED: Navigation and Logo */
+/* Header & Logo Section */
 .navbar {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -60,239 +48,116 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    padding: 15px 20px;
 }
 
-/* Styling the logo to match the all-caps, bold, slanted vibe */
-.logo {
-    text-transform: uppercase;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--primary-color);
-    letter-spacing: -0.5px;
+.logo-wrapper {
+    display: flex;
+    flex-direction: column;
     line-height: 1;
 }
 
-.logo .top {
-    font-size: 1.6rem;
+.logo-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
 }
 
-.logo .bottom {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
+.wci-box {
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-weight: 900;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
 }
 
-.logo span {
-    color: var(--accent-color);
+.wolfe-text {
+    font-size: 2rem;
+    color: #000;
+    letter-spacing: -1px;
 }
 
+.contracting-text {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #222;
+}
+
+.script-text {
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+/* Navigation */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .nav-links a {
-    /* UPDATED: Bolder nav links, also uppercase */
+    text-decoration: none;
+    color: var(--primary-color);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    background-color: var(--primary-color);
     background: linear-gradient(rgba(27, 42, 71, 0.8), rgba(27, 42, 71, 0.8)), url('hero-bg.jpg') center/cover;
-    height: 70vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     text-align: center;
     color: #fff;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* UPDATED: Extra bold, italic, and uppercase for H1 */
-.hero h1 {
-    font-size: 3.8rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 40px;
-    color: #e0e6ed;
-    font-weight: 300;
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
 }
 
 .btn {
     display: inline-block;
-    padding: 15px 35px;
-    font-size: 1rem;
-    font-weight: 700;
+    padding: 12px 30px;
+    background: var(--accent-color);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
     text-transform: uppercase;
+    margin-top: 20px;
     border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    letter-spacing: 1px;
 }
 
-.btn-primary {
-    background-color: var(--accent-color);
-    color: #fff;
-    border: none;
-}
+/* Section Styling */
+.section { padding: 60px 0; }
+.bg-light { background: var(--light-bg); }
+.section-title { text-align: center; margin-bottom: 40px; }
+.section-title h2 { font-size: 2.2rem; }
+.underline { height: 4px; width: 50px; background: var(--accent-color); margin: 10px auto; }
 
-.btn-primary:hover {
-    background-color: #cf6d18;
-    color: #fff;
-}
+/* Grid & Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card { background: #fff; padding: 30px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.card h3 { font-family: 'Michroma', sans-serif; font-size: 1rem; margin: 15px 0; }
 
-/* Sections & Typography */
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
+/* Gallery */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+.gallery-img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; }
 
-/* UPDATED: Section H2 extra bold, italic, uppercase */
-.section-title h2 {
-    font-size: 2.5rem;
-    font-weight: 900;
-    font-style: italic;
-    text-transform: uppercase;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    letter-spacing: -0.5px;
-}
+/* Contact & Footer */
+.contact-card { background: #fff; padding: 30px; text-align: center; max-width: 500px; margin: 0 auto; }
+footer { background: #111; color: #fff; text-align: center; padding: 20px 0; font-size: 0.8rem; }
 
-.underline {
-    height: 4px;
-    width: 60px;
-    background-color: var(--accent-color);
-    margin: 0 auto;
-    border-radius: 2px;
-}
-
-.lead-text {
-    text-align: center;
-    font-size: 1.15rem;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #555;
-    font-weight: 400;
-}
-
-/* Services Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.card {
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s ease;
-    border-top: 4px solid transparent;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    border-top: 4px solid var(--accent-color);
-}
-
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: var(--primary-color);
-    /* Bolder subheaders */
-    font-weight: 700;
-    font-size: 1.35rem;
-}
-
-.card p {
-    font-weight: 400;
-    font-size: 0.95rem;
-}
-
-/* Gallery Grid */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.gallery-img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.gallery-img:hover {
-    transform: scale(1.03);
-}
-
-/* Contact Section */
-.contact-card {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    font-weight: 400;
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: #fff;
-    text-align: center;
-    padding: 30px 0;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 0;
-    }
-    .logo {
-        margin-bottom: 10px;
-    }
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .nav-links {
-        display: none; 
-    }
+    .header-container { flex-direction: column; text-align: center; }
+    .nav-links { margin-top: 20px; }
+    .hero h1 { font-size: 2.2rem; }
 }
